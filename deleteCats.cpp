@@ -24,8 +24,8 @@ void deleteAllCats()
         for (int j = 0; j < MAX_CAT_NAME; j++){
             database[i].name[j] = 0;
         }
-        database[i].gender = 0;
-        database[i].breed = 0;
+        database[i].gender = UNKNOWN_GENDER;
+        database[i].breed = UNKNOWN_BREED;
         database[i].isFixed = 0;
         database[i].weight = 0;
     }
@@ -37,9 +37,10 @@ void deleteCat(int index)
     for (int i = 0; i < MAX_CAT_NAME; i++){
         database[index].name[i] = 0;
     }
-    database[index].gender = 0;
-    database[index].breed = 0;
+    database[index].gender = UNKNOWN_GENDER;
+    database[index].breed = UNKNOWN_BREED;
     database[index].isFixed = 0;
     database[index].weight = 0;
+    numcats -= 1;
 }
 
