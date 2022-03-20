@@ -35,7 +35,7 @@ struct Cat{
 extern struct Cat database[MAX_CATS];
 
 extern int numcats;
-extern char* colorName(enum Color color);
-extern char* breedName(enum breeds breed);
-extern char* genderName(enum genders gender);
+extern const char* colorName(enum Color color);
+extern const char* breedName(enum breeds breed);
+extern const char* genderName(enum genders gender);
 

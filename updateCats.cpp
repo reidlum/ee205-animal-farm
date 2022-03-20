@@ -17,7 +17,7 @@
 #include "updateCats.h"
 #include "config.h"
 
-void updateCatName(int index, char* newName)
+void updateCatName(int index, const char* newName)
 {
     int indatabase;
     for (int i = 0; i < MAX_CATS; i++){ //Checks if name is in database

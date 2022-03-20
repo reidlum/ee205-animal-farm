@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-extern void updateCatName(int index, char* newName);
+extern void updateCatName(int index, const char* newName);
 extern void fixCat(int index);
 extern void updateCatWeight(int index, float newWeight);
 extern void updateCatCollar1(int index, enum Color newColor);

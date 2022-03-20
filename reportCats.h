@@ -12,5 +12,5 @@
 
 extern void printCat(int index);
 extern void printAllCats();
-extern int findCat(char* searchname);
+extern int findCat(const char* searchname);
 

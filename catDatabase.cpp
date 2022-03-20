@@ -20,7 +20,7 @@ struct Cat database[MAX_CATS];
 int numcats = 0;
 
 
-char* colorName(enum Color color)
+const char* colorName(enum Color color)
 {
     switch(color){
         case 0:
@@ -39,11 +39,11 @@ char* colorName(enum Color color)
     return "none";
 }
 
-char* breedName(enum breeds breed)
+const char* breedName(enum breeds breed)
 {
     switch(breed){
         case 0:
-            return "Unknown Breek";
+            return "Unknown Breed";
         case 1:
             return "Maine Coon";
         case 2:
@@ -58,11 +58,11 @@ char* breedName(enum breeds breed)
     return "none";
 }
 
-char* genderName(enum genders gender)
+const char* genderName(enum genders gender)
 {
     switch(gender){
         case 0:
-            return "Uknown Gender";
+            return "Unknown Gender";
         case 1:
             return "Male";
         case 2:

@@ -10,4 +10,4 @@
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-extern int addCat(char* inputname, enum genders inputgender, enum breeds inputbreed, bool isFixed, float inputweight, enum Color inputcollarColor1, enum Color inputcollarColor2, unsigned long long inputlicense);
+extern int addCat(const char* inputname, enum genders inputgender, enum breeds inputbreed, bool isFixed, float inputweight, enum Color inputcollarColor1, enum Color inputcollarColor2, unsigned long long inputlicense);

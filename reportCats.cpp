@@ -39,7 +39,7 @@ void printAllCats()
     }
 }
 
-int findCat(char* searchname)
+int findCat(const char* searchname)
 {
     int indatabase; //varible that changes depending on if inputname is in the database
     for (int i = 0; i < MAX_CATS; i++){ //Checks if name is in database
