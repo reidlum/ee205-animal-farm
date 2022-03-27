@@ -41,7 +41,7 @@ void fixCat(int index)
     database[index].isFixed = true;
 }
 
-void updateCatWeight(int index, float newWeight)
+void updateCatWeight(int index, Weight newWeight)
 {
     if (newWeight > 0){ //Checks if weight is > 0
         database[index].weight = newWeight;
