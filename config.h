@@ -11,3 +11,4 @@
 
 #define PROGRAM_NAME "animalfarm"
 typedef float Weight;
+typedef int NumCats;

@@ -17,7 +17,7 @@
 #include "config.h"
 
 struct Cat database[MAX_CATS];
-int numcats = 0;
+NumCats numcats = 0;
 
 
 const char* colorName(enum Color color)
