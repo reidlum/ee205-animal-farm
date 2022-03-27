@@ -14,6 +14,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+#include "config.h"
+
 
 #define MAX_CATS     (1024)
 #define MAX_CAT_NAME (50)

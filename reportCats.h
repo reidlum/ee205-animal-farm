@@ -10,6 +10,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 
+#include "config.h"
+
 extern void printCat(int index);
 extern void printAllCats();
 extern int findCat(const char* searchname);

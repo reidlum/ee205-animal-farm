@@ -10,6 +10,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 
+#include "config.h"
+
 extern void deleteAllCats();
 void deleteCat(int index);
 

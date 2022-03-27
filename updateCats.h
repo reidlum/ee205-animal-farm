@@ -10,6 +10,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 
+#include "config.h"
+
 extern void updateCatName(int index, const char* newName);
 extern void fixCat(int index);
 extern void updateCatWeight(int index, float newWeight);
