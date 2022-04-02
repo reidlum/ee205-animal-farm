@@ -8,7 +8,7 @@
 /// @author Reid Lum <reidlum@hawaii.edu>
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
-/*
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -16,10 +16,10 @@
 
 #include "catDatabase.h"
 #include "config.h"
-
+/*
 struct Cat database[MAX_CATS];
 NumCats numcats = 0;
-
+*/
 
 const char* colorName(enum Color color)
 {
@@ -71,7 +71,7 @@ const char* genderName(enum genders gender)
     }
     return "none";
 }
-*/
+
 
 
 
