@@ -15,16 +15,27 @@
 
 class Cat {
 protected:
+    //protected members
     char name[MAX_CAT_NAME] ;
     enum Gender gender ;
     enum Breed breed ;
     bool isCatFixed ;
     Weight weight ;
 public:
-    Cat* next ;
-    Cat();
+    //getters
+    const char *getName() const;
+    Gender getGender() const;
+    Breed getBreed() const;
+    bool isCatFixed1() const;
+    Weight getWeight() const;
 
+    //public member
+    Cat* next ;
+
+    //constructors
+    Cat();
     Cat(char *newName, Gender newGender, Breed newBreed, Weight newWeight);
+
 
 };
 

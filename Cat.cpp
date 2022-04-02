@@ -16,3 +16,23 @@ Cat::Cat(char *newName, Gender newGender, Breed newBreed, Weight newWeight){
 
 }
 
+const char *Cat::getName() const {
+    return name;
+}
+
+Gender Cat::getGender() const {
+    return gender;
+}
+
+Breed Cat::getBreed() const {
+    return breed;
+}
+
+bool Cat::isCatFixed1() const {
+    return isCatFixed;
+}
+
+Weight Cat::getWeight() const {
+    return weight;
+}
+
