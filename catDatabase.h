@@ -19,25 +19,25 @@
 
 #define MAX_CATS     (1024)
 #define MAX_CAT_NAME (50)
-enum genders {UNKNOWN_GENDER, MALE, FEMALE};
-enum breeds {UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX};
+enum Gender {UNKNOWN_GENDER, MALE, FEMALE};
+enum Breed {UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX};
 enum Color {BLACK, WHITE, RED, BLUE, GREEN, PINK};
-
+/*
 struct Cat{
     char name[MAX_CAT_NAME];
-    enum genders gender;
-    enum breeds breed;
+    enum Gender gender;
+    enum Breed breed;
     bool isFixed;
     Weight weight;
     enum Color collarColor1;
     enum Color collarColor2;
     unsigned long long license;
 };
-
+*/
 extern struct Cat database[MAX_CATS];
 
 extern NumCats numcats;
 extern const char* colorName(enum Color color);
-extern const char* breedName(enum breeds breed);
-extern const char* genderName(enum genders gender);
+extern const char* breedName(enum Breed breed);
+extern const char* genderName(enum Gender gender);
 

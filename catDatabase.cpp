@@ -40,7 +40,7 @@ const char* colorName(enum Color color)
     return "none";
 }
 
-const char* breedName(enum breeds breed)
+const char* breedName(enum Breed breed)
 {
     switch(breed){
         case 0:
@@ -59,7 +59,7 @@ const char* breedName(enum breeds breed)
     return "none";
 }
 
-const char* genderName(enum genders gender)
+const char* genderName(enum Gender gender)
 {
     switch(gender){
         case 0:
