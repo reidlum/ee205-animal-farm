@@ -8,6 +8,7 @@
 /// @author Reid Lum <reidlum@hawaii.edu>
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
+/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -65,4 +66,4 @@ void updateLicense(int index, unsigned long long newLicense)
 {
     database[index].license = newLicense;
 }
-
+*/

@@ -8,6 +8,7 @@
 /// @author Reid Lum <reidlum@hawaii.edu>
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
+/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -73,3 +74,5 @@ int addCat(const char* inputname, enum genders inputgender, enum breeds inputbre
         return numcats - 1;
     }
 }
+*/
+

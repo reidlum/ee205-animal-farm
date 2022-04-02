@@ -9,6 +9,6 @@
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
 
-#define PROGRAM_NAME "animalfarm"
+#define PROGRAM_TITLE "animalfarm"
 typedef float Weight;
 typedef int NumCats;

@@ -13,6 +13,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+#include <iostream>
 
 #include "catDatabase.h"
 #include "addCats.h"
@@ -20,7 +21,7 @@
 #include "updateCats.h"
 #include "deleteCats.h"
 #include "config.h"
-
+/*
 #define DEBUG
 
 int main(){
@@ -63,4 +64,10 @@ int main(){
     findCat("catnotinthedatabase");
 #endif
 
+}
+*/
+using namespace std;
+int main(){
+    cout << "Starting " << PROGRAM_TITLE << endl ;
+    cout << "Done with " << PROGRAM_TITLE << endl ;
 }

@@ -8,7 +8,7 @@
 /// @author Reid Lum <reidlum@hawaii.edu>
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
-
+/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -43,4 +43,4 @@ void deleteCat(int index)
     database[index].weight = 0;
     numcats -= 1;
 }
-
+*/

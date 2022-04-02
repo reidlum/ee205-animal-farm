@@ -8,6 +8,7 @@
 /// @author Reid Lum <reidlum@hawaii.edu>
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
+/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -57,5 +58,5 @@ int findCat(const char* searchname)
     }
     return 0;
 }
-
+*/
 
