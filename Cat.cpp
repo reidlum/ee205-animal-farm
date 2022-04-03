@@ -28,12 +28,17 @@ Breed Cat::getBreed() const {
     return breed;
 }
 
-bool Cat::isCatFixed1() const {
+bool Cat::isFixed() const {
     return isCatFixed;
 }
 
 Weight Cat::getWeight() const {
     return weight;
+}
+
+void Cat::setName(const char *newName) {
+    memset(name, 0, MAX_CAT_NAME);
+    strcpy(name, newName);
 }
 
 void Cat::setGender(Gender gender) {
@@ -51,4 +56,6 @@ void Cat::fixCat(bool isCatFixed) {
 void Cat::setWeight(Weight weight) {
     Cat::weight = weight;
 }
+
+
 

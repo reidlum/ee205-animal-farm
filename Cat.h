@@ -10,6 +10,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 
+#include <iostream>
+#include <cstring>
 #include "config.h"
 #include "catDatabase.h"
 
@@ -26,11 +28,11 @@ public:
     const char *getName() const;
     Gender getGender() const;
     Breed getBreed() const;
-    bool isCatFixed1() const;
+    bool isFixed() const;
     Weight getWeight() const;
 
     //setters
-    void setName(const char* name);
+    void setName(const char* newName);
     void setGender(Gender gender);
     void setBreed(Breed breed);
     void fixCat(bool isCatFixed);
