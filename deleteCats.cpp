@@ -8,6 +8,18 @@
 /// @author Reid Lum <reidlum@hawaii.edu>
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
+#include "config.h"
+#include "catDatabase.h"
+#include "addCats.h"
+#include <iostream>
+#include <cassert>
+
+bool deleteCat(Cat* inputName)
+{
+
+}
+
+
 /*
 #include <stdio.h>
 #include <stdlib.h>
