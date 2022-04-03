@@ -14,7 +14,7 @@
 #include <stdexcept>
 #include <iomanip>
 #include <cassert>
-//test
+
 #include "catDatabase.h"
 #include "Cat.h"
 #include "config.h"

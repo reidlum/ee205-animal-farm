@@ -10,4 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-extern int addCat(const char* inputname, enum Gender inputgender, enum Breed inputbreed, bool isFixed, Weight inputweight, enum Color inputcollarColor1, enum Color inputcollarColor2, unsigned long long inputlicense);
+//extern int addCat(const char* inputname, enum Gender inputgender, enum Breed inputbreed, bool isFixed, Weight inputweight, enum Color inputcollarColor1, enum Color inputcollarColor2, unsigned long long inputlicense);
+
+#include "Cat.h"
+extern bool addCat(Cat* newCat);

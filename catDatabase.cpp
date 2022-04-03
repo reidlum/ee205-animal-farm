@@ -75,7 +75,15 @@ const char* genderName(enum Gender gender)
     return "none";
 }
 
-
+bool validateDatabase()
+{
+    for(Cat* iCat = catDatabaseHeadPointer ; iCat != nullptr ; iCat = iCat->next){
+        if (!iCat->validate()){
+            return false;
+        }
+    }
+    return true;
+}
 
 
 
