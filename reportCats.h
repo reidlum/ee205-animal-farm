@@ -11,8 +11,10 @@
 #pragma once
 
 #include "config.h"
+#include "Cat.h"
 
 //extern void printCat(int index);
 extern bool printAllCats();
 //extern int findCat(const char* searchname);
+extern Cat* findCatByName(const char* searchName);
 

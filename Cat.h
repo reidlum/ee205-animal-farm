@@ -55,7 +55,7 @@ public:
 
     //constructors
     Cat();
-    Cat(char *newName, Gender inputGender, Breed inputBreed, Weight inputWeight);
+    Cat(const char *newName, Gender inputGender, Breed inputBreed, Weight inputWeight);
 
     //destructor
     virtual ~Cat();

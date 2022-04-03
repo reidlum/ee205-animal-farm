@@ -30,7 +30,7 @@ Cat::~Cat() {
     zeroOutMemberData();
 }
 
-Cat::Cat(char *newName, Gender inputGender, Breed inputBreed, Weight inputWeight) : Cat() {
+Cat::Cat(const char *newName, Gender inputGender, Breed inputBreed, Weight inputWeight) : Cat() {
     setName(newName);
     setGender(inputGender);
     setBreed(inputBreed);

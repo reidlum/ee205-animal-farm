@@ -29,8 +29,12 @@ bool printAllCats()
     assert(validateDatabase());
     return true;
 }
+/*
+Cat* findCatByName(const char* searchName)
+{
 
-
+}
+*/
 
 /*
 #include <stdio.h>
