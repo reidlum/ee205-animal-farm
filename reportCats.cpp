@@ -29,12 +29,20 @@ bool printAllCats()
     assert(validateDatabase());
     return true;
 }
-/*
+
 Cat* findCatByName(const char* searchName)
 {
-
+    int indatabase; //varible that changes depending on if searchName is in the database
+    for (Cat* iCat = catDatabaseHeadPointer ; iCat != nullptr ; iCat = iCat->next) { //Checks if name is in database
+        indatabase = strcmp(searchName, iCat->getName());
+        if (indatabase == 0) {
+            return iCat;
+        }
+    }
+    fprintf( stderr, "%s: Cat name [%s] is not in the database.\n", PROGRAM_TITLE, searchName ) ;
+    return nullptr;
 }
-*/
+
 
 /*
 #include <stdio.h>

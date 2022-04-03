@@ -79,7 +79,8 @@ int main(){
     //deleteCat(testCat2);
     //testCat2->print();
     //printAllCats();
-    deleteAllCats();
+    //deleteAllCats();
+    deleteCat(findCatByName("Miloo"));
     printAllCats();
     cout << "Done with " << PROGRAM_TITLE << endl ;
 }
