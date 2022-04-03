@@ -55,8 +55,8 @@ public:
     virtual ~Cat();
 
     //public methods
-    bool print() const;
-    bool validate() const;
+    bool print() const noexcept;
+    bool validate() const noexcept;
 
 private:
     //default

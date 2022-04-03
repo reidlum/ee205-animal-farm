@@ -160,7 +160,7 @@ void Cat::zeroOutMemberData() {
 /// @returns true if everything worked correctly. false if something goes
 /// wrong
 
-bool Cat::print() const {
+bool Cat::print() const noexcept{
     assert( validate() ) ;
     cout << setw(80) << setfill( '=' ) << "" << endl ;
     cout << setfill( ' ' ) ;
@@ -175,7 +175,7 @@ bool Cat::print() const {
 }
 
 
-bool Cat::validate() const {
+bool Cat::validate() const noexcept{
     if(validateName( name ) && validateGender(gender) && validateBreed(breed) && validateWeight(weight))
     {
         return true;
