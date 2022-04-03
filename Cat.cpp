@@ -14,9 +14,15 @@
 #include "Cat.h"
 #include "config.h"
 
-Cat::Cat() {}
+Cat::Cat() {
+    zeroOutMemberData();
+}
 
-Cat::Cat(char *newName, Gender inputGender, Breed inputBreed, Weight inputWeight){
+Cat::Cat(char *newName, Gender inputGender, Breed inputBreed, Weight inputWeight) : Cat() {
+    setName(newName);
+    setGender(inputGender);
+    setBreed(inputBreed);
+    setWeight(inputWeight);
 
 }
 
@@ -127,6 +133,15 @@ bool Cat::validateWeight(const Weight inputWeight) {
         return  false;
     }
     return true;
+}
+
+void Cat::zeroOutMemberData() {
+    memset(name, 0, MAX_CAT_NAME;
+    gender = UNKNOWN_GENDER;
+    breed = UNKNOWN_BREED;
+    isCatFixed = false;
+    weight = UNKNOWN_WEIGHT;
+    next = nullptr;
 }
 
 

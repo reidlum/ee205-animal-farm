@@ -51,6 +51,9 @@ public:
     Cat();
     Cat(char *newName, Gender newGender, Breed newBreed, Weight newWeight);
 
+private:
+    //default
+    void zeroOutMemberData();
 
 };
 
