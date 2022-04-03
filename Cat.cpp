@@ -36,3 +36,19 @@ Weight Cat::getWeight() const {
     return weight;
 }
 
+void Cat::setGender(Gender gender) {
+    Cat::gender = gender;
+}
+
+void Cat::setBreed(Breed breed) {
+    Cat::breed = breed;
+}
+
+void Cat::fixCat(bool isCatFixed) {
+    Cat::isCatFixed = isCatFixed;
+}
+
+void Cat::setWeight(Weight weight) {
+    Cat::weight = weight;
+}
+

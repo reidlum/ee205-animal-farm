@@ -29,6 +29,13 @@ public:
     bool isCatFixed1() const;
     Weight getWeight() const;
 
+    //setters
+    void setName(const char* name);
+    void setGender(Gender gender);
+    void setBreed(Breed breed);
+    void fixCat(bool isCatFixed);
+    void setWeight(Weight weight);
+
     //public member
     Cat* next ;
 
