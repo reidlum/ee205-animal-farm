@@ -35,7 +35,7 @@ public:
     void setName(const char* newName);
     void setGender(Gender inputgender);
     void setBreed(Breed inputbreed);
-    void fixCat(bool isCatFixed);
+    void fixCat();
     void setWeight(Weight inputweight);
 
     //validations

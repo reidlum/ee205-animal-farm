@@ -41,25 +41,44 @@ Weight Cat::getWeight() const {
 }
 
 void Cat::setName(const char *newName) {
-
-    memset(name, 0, MAX_CAT_NAME);
-    strcpy(name, newName);
+    if (validateName(newName))
+    {
+        memset(name, 0, MAX_CAT_NAME);
+        strcpy(name, newName);
+    }
 }
 
 void Cat::setGender(Gender inputGender) {
-    Cat::gender = inputGender;
+    if (gender == UNKNOWN_GENDER)
+    {
+        validateGender(inputGender);
+        Cat::gender = inputGender;
+    }
+    else{
+        fprintf( stderr, "%s: No transgender cats.\n", PROGRAM_TITLE) ;
+    }
 }
 
 void Cat::setBreed(Breed inputBreed) {
-    Cat::breed = inputBreed;
+    if (breed == UNKNOWN_BREED)
+    {
+        validateBreed(inputBreed);
+        Cat::breed = inputBreed;
+    }
+    else{
+        fprintf( stderr, "%s: No transbreed cats.\n", PROGRAM_TITLE) ;
+    }
 }
 
-void Cat::fixCat(bool isCatFixed) {
-    Cat::isCatFixed = isCatFixed;
+void Cat::fixCat() {
+    Cat::isCatFixed = true;
 }
 
 void Cat::setWeight(Weight inputWeight) {
-    Cat::weight = inputWeight;
+    if (validateWeight(inputWeight))
+    {
+        Cat::weight = inputWeight;
+    }
 }
 
 bool Cat::validateName(const char *newName) {
