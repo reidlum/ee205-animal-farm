@@ -21,6 +21,7 @@
 #include "updateCats.h"
 #include "deleteCats.h"
 #include "config.h"
+#include "Cat.h"
 /*
 #define DEBUG
 
@@ -69,5 +70,6 @@ int main(){
 using namespace std;
 int main(){
     cout << "Starting " << PROGRAM_TITLE << endl ;
+    addCat(new Cat("Loki",MALE,PERSIAN,1.0));
     cout << "Done with " << PROGRAM_TITLE << endl ;
 }

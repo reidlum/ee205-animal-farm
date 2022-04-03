@@ -18,6 +18,13 @@ using namespace std;
 
 bool addCat(Cat* newCat)
 {
+    newCat->validate();
+    assert(validateDatabase());
+    newCat->next = catDatabaseHeadPointer;
+    catDatabaseHeadPointer = newCat;
+    numcats++;
+    assert(validateDatabase());
+
     return true;
 }
 
