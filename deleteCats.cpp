@@ -14,9 +14,33 @@
 #include <iostream>
 #include <cassert>
 
-bool deleteCat(Cat* inputName)
+bool deleteCat(Cat* deleteThisCat)
 {
+    assert(validateDatabase());
 
+    if(deleteThisCat == catDatabaseHeadPointer)
+    {
+        catDatabaseHeadPointer = catDatabaseHeadPointer->next;
+        delete deleteThisCat;
+        numcats--;
+        assert(validateDatabase());
+        return true;
+    }
+
+    Cat* current = catDatabaseHeadPointer;
+    while (current != nullptr) {
+        if (current->next == deleteThisCat){
+            break;
+        }
+        else{
+            current = current->next;
+        }
+    }
+    current->next = deleteThisCat->next;
+    delete deleteThisCat;
+    numcats--;
+    assert(validateDatabase());
+    return true;
 }
 
 
