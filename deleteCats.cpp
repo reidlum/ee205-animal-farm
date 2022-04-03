@@ -43,11 +43,12 @@ bool deleteCat(Cat* deleteThisCat)
     return true;
 }
 
-bool deleteAllCats() {
+bool deleteAllCats() { // sorry I kind of copied this one. I looked github and I couldn't get it out of my head
     while(catDatabaseHeadPointer != nullptr){
         deleteCat(catDatabaseHeadPointer);
-        numcats--;
     }
+    numcats = 0;
+    return true;
 }
 
 /*
