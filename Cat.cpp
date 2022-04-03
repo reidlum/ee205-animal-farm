@@ -15,9 +15,10 @@
 #include <iomanip>
 #include <cassert>
 
+#include "catDatabase.h"
 #include "Cat.h"
 #include "config.h"
-#include "catDatabase.h"
+
 
 using namespace std;
 

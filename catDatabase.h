@@ -18,11 +18,7 @@
 #include "Cat.h"
 
 #define MAX_CATS     (1024)
-#define MAX_CAT_NAME (50)
-enum Gender {UNKNOWN_GENDER, MALE, FEMALE};
-enum Breed {UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX};
-enum Color {BLACK, WHITE, RED, BLUE, GREEN, PINK};
-const Weight UNKNOWN_WEIGHT = -1;
+
 /*
 struct Cat{
     char name[MAX_CAT_NAME];
