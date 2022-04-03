@@ -74,10 +74,12 @@ int main(){
     addCat(new Cat("Milo",MALE,MANX,1.1));
     addCat(new Cat("doodoo",MALE,MANX,1.1));
     //printAllCats();
-    Cat* testCat = catDatabaseHeadPointer;
-    Cat* testCat2 = testCat->next;
-    deleteCat(testCat2);
+    //Cat* testCat = catDatabaseHeadPointer;
+    //Cat* testCat2 = testCat->next;
+    //deleteCat(testCat2);
     //testCat2->print();
+    //printAllCats();
+    deleteAllCats();
     printAllCats();
     cout << "Done with " << PROGRAM_TITLE << endl ;
 }

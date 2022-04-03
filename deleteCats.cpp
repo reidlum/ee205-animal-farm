@@ -43,6 +43,12 @@ bool deleteCat(Cat* deleteThisCat)
     return true;
 }
 
+bool deleteAllCats() {
+    while(catDatabaseHeadPointer != nullptr){
+        deleteCat(catDatabaseHeadPointer);
+        numcats--;
+    }
+}
 
 /*
 #include <stdio.h>

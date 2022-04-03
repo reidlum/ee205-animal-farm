@@ -12,6 +12,5 @@
 
 #include "config.h"
 
-extern void deleteAllCats();
+extern bool deleteAllCats();
 extern bool deleteCat(Cat* inputName);
-
