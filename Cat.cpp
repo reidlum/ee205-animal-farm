@@ -102,7 +102,12 @@ bool Cat::validateBreed(const Breed inputBreed) {
 }
 
 bool Cat::validateWeight(const Weight inputWeight) {
-    return false;
+    if (inputWeight <= 0) //Checks if weight is > 0
+    {
+        fprintf( stderr, "%s: Cat weight [%f] isn't possible.\n", PROGRAM_TITLE, inputWeight ) ;
+        return  false;
+    }
+    return true;
 }
 
 
