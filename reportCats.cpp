@@ -8,6 +8,30 @@
 /// @author Reid Lum <reidlum@hawaii.edu>
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
+#include <iostream>
+#include <cassert>
+
+#include "config.h"
+#include "reportCats.h"
+#include "catDatabase.h"
+#include "Cat.h"
+
+using namespace std;
+
+bool printAllCats()
+{
+    assert(validateDatabase());
+    int catNum = 0;
+    for(Cat* iCat = catDatabaseHeadPointer ; iCat != nullptr ; iCat = iCat->next){
+        iCat->print();
+        catNum++;
+    }
+    assert(validateDatabase());
+    return true;
+}
+
+
+
 /*
 #include <stdio.h>
 #include <stdlib.h>

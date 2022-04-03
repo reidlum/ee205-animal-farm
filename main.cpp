@@ -71,5 +71,6 @@ using namespace std;
 int main(){
     cout << "Starting " << PROGRAM_TITLE << endl ;
     addCat(new Cat("Loki",MALE,PERSIAN,1.0));
+    printAllCats();
     cout << "Done with " << PROGRAM_TITLE << endl ;
 }

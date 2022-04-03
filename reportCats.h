@@ -12,7 +12,7 @@
 
 #include "config.h"
 
-extern void printCat(int index);
-extern void printAllCats();
-extern int findCat(const char* searchname);
+//extern void printCat(int index);
+extern bool printAllCats();
+//extern int findCat(const char* searchname);
 
