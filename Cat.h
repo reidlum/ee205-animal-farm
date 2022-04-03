@@ -39,17 +39,24 @@ public:
     void setWeight(Weight inputWeight);
 
     //validations
-    bool validateName(const char* newName);
-    bool validateGender(const Gender inputGender);
-    bool validateBreed(const Breed inputBreed);
-    bool validateWeight(const Weight inputWeight);
+    static bool validateName(const char* newName);
+    static bool validateGender(const Gender inputGender);
+    static bool validateBreed(const Breed inputBreed);
+    static bool validateWeight(const Weight inputWeight);
 
     //public member
     Cat* next ;
 
     //constructors
     Cat();
-    Cat(char *newName, Gender newGender, Breed newBreed, Weight newWeight);
+    Cat(char *newName, Gender inputGender, Breed inputBreed, Weight inputWeight);
+
+    //destructor
+    virtual ~Cat();
+
+    //public methods
+    bool print() const;
+    bool validate() const;
 
 private:
     //default

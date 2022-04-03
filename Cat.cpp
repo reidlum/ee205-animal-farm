@@ -11,10 +11,20 @@
 #include <string.h>
 #include <iostream>
 #include <stdio.h>
+#include <stdexcept>
+#include <iomanip>
+#include <cassert>
+
 #include "Cat.h"
 #include "config.h"
 
+using namespace std;
+
 Cat::Cat() {
+    zeroOutMemberData();
+}
+
+Cat::~Cat() {
     zeroOutMemberData();
 }
 
@@ -136,13 +146,48 @@ bool Cat::validateWeight(const Weight inputWeight) {
 }
 
 void Cat::zeroOutMemberData() {
-    memset(name, 0, MAX_CAT_NAME;
+    memset(name, 0, MAX_CAT_NAME);
     gender = UNKNOWN_GENDER;
     breed = UNKNOWN_BREED;
     isCatFixed = false;
     weight = UNKNOWN_WEIGHT;
     next = nullptr;
 }
+
+
+/// Format a line for printing the members of a class
+#define FORMAT_LINE( className, member ) cout << setw(8) << (className) << setw(20) << (member) << setw(52)
+/// @returns true if everything worked correctly. false if something goes
+/// wrong
+
+bool Cat::print() const {
+    assert( validate() ) ;
+    cout << setw(80) << setfill( '=' ) << "" << endl ;
+    cout << setfill( ' ' ) ;
+    cout << left ;
+    cout << boolalpha ;
+    FORMAT_LINE( "Cat", "name" ) << getName() << endl ;
+    FORMAT_LINE( "Cat", "gender" ) << genderName( getGender() ) << endl ;
+    FORMAT_LINE( "Cat", "breed" ) << breedName( getBreed() ) << endl ;
+    FORMAT_LINE( "Cat", "isFixed" ) << isFixed() << endl ;
+    FORMAT_LINE( "Cat", "weight" ) << getWeight() << endl ;
+    return true ;
+}
+
+
+bool Cat::validate() const {
+    if(validateName( name ) && validateGender(gender) && validateBreed(breed) && validateWeight(weight))
+    {
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+
+
+
 
 
 
