@@ -18,8 +18,11 @@
 #include "config.h"
 /*
 struct Cat database[MAX_CATS];
-NumCats numcats = 0;
 */
+NumCats numcats = 0;
+
+
+Cat* catDatabaseHeadPointer = nullptr;
 
 const char* colorName(enum Color color)
 {

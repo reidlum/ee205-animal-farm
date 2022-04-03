@@ -15,7 +15,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include "config.h"
-
+#include "Cat.h"
 
 #define MAX_CATS     (1024)
 #define MAX_CAT_NAME (50)
@@ -34,11 +34,12 @@ struct Cat{
     enum Color collarColor2;
     unsigned long long license;
 };
-*/
+
 extern struct Cat database[MAX_CATS];
+*/
 
 extern NumCats numcats;
 extern const char* colorName(enum Color color);
 extern const char* breedName(enum Breed breed);
 extern const char* genderName(enum Gender gender);
-
+extern Cat* catDatabaseHeadPointer;
