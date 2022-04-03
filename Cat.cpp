@@ -86,14 +86,19 @@ bool Cat::validateName(const char *newName) {
 bool Cat::validateGender(const Gender inputGender) {
     if (inputGender == UNKNOWN_GENDER)
     {
-        fprintf( stderr, "%s: Cat weight [%f] isn't possible.\n", PROGRAM_TITLE, inputGender ) ;
+        fprintf( stderr, "%s: Gender must be known.\n", PROGRAM_TITLE, inputGender ) ;
         return false;
     }
     return true;
 }
 
 bool Cat::validateBreed(const Breed inputBreed) {
-    return false;
+    if (inputBreed == UNKNOWN_BREED)
+    {
+        fprintf( stderr, "%s: Breed must be known.\n", PROGRAM_TITLE, inputBreed ) ;
+        return false;
+    }
+    return true;
 }
 
 bool Cat::validateWeight(const Weight inputWeight) {
