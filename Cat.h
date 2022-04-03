@@ -33,10 +33,16 @@ public:
 
     //setters
     void setName(const char* newName);
-    void setGender(Gender gender);
-    void setBreed(Breed breed);
+    void setGender(Gender inputgender);
+    void setBreed(Breed inputbreed);
     void fixCat(bool isCatFixed);
-    void setWeight(Weight weight);
+    void setWeight(Weight inputweight);
+
+    //validations
+    bool validateName(const char* newName);
+    bool validateGender(const Gender inputGender);
+    bool validateBreed(const Breed inputBreed);
+    bool validateWeight(const Weight inputWeight);
 
     //public member
     Cat* next ;

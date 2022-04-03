@@ -8,11 +8,15 @@
 /// @author Reid Lum <reidlum@hawaii.edu>
 /// @date   02_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
+#include <string.h>
+#include <iostream>
+#include <stdio.h>
 #include "Cat.h"
+#include "config.h"
 
 Cat::Cat() {}
 
-Cat::Cat(char *newName, Gender newGender, Breed newBreed, Weight newWeight){
+Cat::Cat(char *newName, Gender inputGender, Breed inputBreed, Weight inputWeight){
 
 }
 
@@ -37,24 +41,58 @@ Weight Cat::getWeight() const {
 }
 
 void Cat::setName(const char *newName) {
+
     memset(name, 0, MAX_CAT_NAME);
     strcpy(name, newName);
 }
 
-void Cat::setGender(Gender gender) {
-    Cat::gender = gender;
+void Cat::setGender(Gender inputGender) {
+    Cat::gender = inputGender;
 }
 
-void Cat::setBreed(Breed breed) {
-    Cat::breed = breed;
+void Cat::setBreed(Breed inputBreed) {
+    Cat::breed = inputBreed;
 }
 
 void Cat::fixCat(bool isCatFixed) {
     Cat::isCatFixed = isCatFixed;
 }
 
-void Cat::setWeight(Weight weight) {
-    Cat::weight = weight;
+void Cat::setWeight(Weight inputWeight) {
+    Cat::weight = inputWeight;
+}
+
+bool Cat::validateName(const char *newName) {
+    if (newName == nullptr) //checks if newName is nullptr
+    {
+        fprintf( stderr, "%s: Cat name [%s] can't be NULL.\n", PROGRAM_TITLE, newName ) ;
+        return false;
+    }
+
+    if (strlen(newName) <= 0)
+    {
+        fprintf( stderr, "%s: Cat name [%s] can't be <= 0.\n", PROGRAM_TITLE, newName ) ;
+        return false;
+    }
+
+    if (strlen(newName) >= MAX_CAT_NAME) //Checks if cat name is < 30
+    {
+        fprintf(stderr, "%s: Cat name [%s] is too long.\n", PROGRAM_TITLE, newName);
+        return false;
+    }
+    return true;
+}
+
+bool Cat::validateGender(const Gender inputGender) {
+    return false;
+}
+
+bool Cat::validateBreed(const Breed inputBreed) {
+    return false;
+}
+
+bool Cat::validateWeight(const Weight inputWeight) {
+    return false;
 }
 
 
