@@ -17,6 +17,7 @@
 
 #include "Cat.h"
 #include "config.h"
+#include "catDatabase.h"
 
 using namespace std;
 
