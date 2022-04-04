@@ -22,9 +22,9 @@
 #include "deleteCats.h"
 #include "config.h"
 #include "Cat.h"
-/*
-#define DEBUG
 
+#define DEBUG
+/*
 int main(){
     addCat( "Loki", MALE, PERSIAN, true, 8.5, BLACK, WHITE, 101 ) ;
     addCat( "Milo", MALE, MANX, true, 7.0, BLACK, RED, 102 ) ;
@@ -69,18 +69,33 @@ int main(){
 */
 using namespace std;
 int main(){
+    /*
     cout << "Starting " << PROGRAM_TITLE << endl ;
-    addCat(new Cat("Loki",MALE,PERSIAN,1.5));
+    addCat(new Cat("Loki",MALE,PERSIAN,1.0));
     addCat(new Cat("Milo",MALE,MANX,1.1));
-    addCat(new Cat("doodoo",MALE,MANX,1.1));
-    //printAllCats();
-    //Cat* testCat = catDatabaseHeadPointer;
-    //Cat* testCat2 = testCat->next;
-    //deleteCat(testCat2);
-    //testCat2->print();
-    //printAllCats();
-    //deleteAllCats();
-    deleteCat(findCatByName("Miloo"));
+    addCat(new Cat("Bella",FEMALE,MAINE_COON,1.2));
+    addCat(new Cat("Kali",FEMALE,SHORTHAIR,1.3));
+    addCat(new Cat("Trin",FEMALE,MANX,1.4));
+    addCat(new Cat("Chili",MALE,SHORTHAIR,1.5));
+    printAllCats();
+    deleteAllCats();
     printAllCats();
     cout << "Done with " << PROGRAM_TITLE << endl ;
+     */
+#ifdef DEBUG
+    Cat testCat = Cat();
+    cout << (testCat.getName()) << endl;
+    cout << genderName(testCat.getGender()) << endl;
+    cout << breedName(testCat.getBreed()) << endl;
+    cout << testCat.isFixed() << endl;
+    cout << testCat.getWeight() << endl;
+    testCat.validate();
+    testCat.setName(nullptr);
+    testCat.setName("");
+    testCat.setName("L");
+    cout << testCat.getName() << endl;
+
+
+
+#endif
 }
