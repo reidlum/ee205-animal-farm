@@ -16,31 +16,33 @@
 
 bool deleteCat(Cat* deleteThisCat)
 {
-    assert(validateDatabase());
+    if (validateDatabase()) {
 
-    if(deleteThisCat == catDatabaseHeadPointer)
-    {
-        catDatabaseHeadPointer = catDatabaseHeadPointer->next;
-        delete deleteThisCat;
-        numcats--;
-        assert(validateDatabase());
-        return true;
-    }
+        if (deleteThisCat == catDatabaseHeadPointer) {
+            catDatabaseHeadPointer = catDatabaseHeadPointer->next;
+            delete deleteThisCat;
+            numcats--;
+            assert(validateDatabase());
+            return true;
+        }
 
-    Cat* current = catDatabaseHeadPointer;
-    while (current != nullptr) {
-        if (current->next == deleteThisCat){
-            break;
-        }
-        else{
-            current = current->next;
+        Cat *current = catDatabaseHeadPointer;
+        while (current != nullptr) {
+            if (current->next == deleteThisCat) {
+                current->next = deleteThisCat->next;
+                delete deleteThisCat;
+                numcats--;
+                assert(validateDatabase());
+                return true;
+            } else {
+                current = current->next;
+            }
         }
     }
-    current->next = deleteThisCat->next;
-    delete deleteThisCat;
-    numcats--;
-    assert(validateDatabase());
-    return true;
+    else{
+        return false;
+    }
+    return false;
 }
 
 bool deleteAllCats() { // sorry I kind of copied this one. I looked github and I couldn't get it out of my head

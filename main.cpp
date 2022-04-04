@@ -23,7 +23,7 @@
 #include "config.h"
 #include "Cat.h"
 
-#define DEBUG
+//#define DEBUG
 /*
 int main(){
     addCat( "Loki", MALE, PERSIAN, true, 8.5, BLACK, WHITE, 101 ) ;
@@ -129,8 +129,9 @@ int main(){
     addCat(new Cat("Chili",MALE,SHORTHAIR,1.5));
     cout << findCatByName("Bella") << endl; //returns pointer to Bella
     findCatByName("Belinda"); //tries to find cat not in database
-    cout << deleteCat(findCatByName("Bella")) << endl; //deletes cat and returns true
-    //deleteCat(findCatByName("Bella")); //tries to delete cat not in database
+    Cat* Bella = findCatByName("Bella"); //makes Bella
+    cout << deleteCat(Bella) << endl; //deletes cat and returns true
+    cout << deleteCat(Bella) << endl; //tries to delete cat not in database
 
 #endif
 }
