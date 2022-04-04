@@ -142,7 +142,7 @@ bool Cat::validateWeight(const Weight inputWeight) {
     if (inputWeight <= 0) //Checks if weight is > 0
     {
         fprintf( stderr, "%s: Cat weight [%f] isn't possible.\n", PROGRAM_TITLE, inputWeight ) ;
-        return  false;
+        return false;
     }
     return true;
 }
