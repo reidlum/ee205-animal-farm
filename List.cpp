@@ -28,3 +28,15 @@ bool List::isIn(Node *aNode) const {
     }
     return false;
 }
+
+bool List::isSorted() const noexcept {
+    if (head == nullptr) {
+        return true;
+    }
+    for (Node* i = head; i->next != nullptr; i = i->next) {
+        if (i > i->next){
+            return false;
+        }
+    }
+    return true;
+}
