@@ -19,6 +19,12 @@ unsigned int List::size() const noexcept {
 }
 
 bool List::isIn(Node *aNode) const {
-
+    Node* current = head; // Initialize current
+    while (current != nullptr)
+    {
+        if (current == aNode)
+            return true;
+        current = current->next;
+    }
     return false;
 }
