@@ -9,3 +9,16 @@
 /// @date   15_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 #include "List.h"
+
+bool List::empty() const noexcept {
+    return head == nullptr;
+}
+
+unsigned int List::size() const noexcept {
+    return count;
+}
+
+bool List::isIn(Node *aNode) const {
+
+    return false;
+}
