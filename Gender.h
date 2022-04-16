@@ -8,7 +8,46 @@
 /// @author Reid Lum <reidlum@hawaii.edu>
 /// @date   15_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
-#ifndef EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_GENDER_H
-#define EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_GENDER_H
+#pragma once
 
-#endif //EE205_LAB_08D_ANIMAL_FARM_1_TO_CLION_GENDER_H
+#include <iostream>
+#include <string>
+
+#include "config.h"
+
+/// A gender... for educational use only.  This is not intended to be
+/// inclusive of all possible genders
+enum class Gender {
+    UNKNOWN_GENDER=0
+    ,MALE
+    ,FEMALE
+};
+
+
+/// Output Gender as a formatted string
+///
+/// @param lhs_stream The output stream to write to (usually `cout`).
+///                   `lhs` stands for Left Hand Side and means the left side
+///                   of the `<<` operator.
+/// @param rhs_Gender The Gender to output.
+///                   `rhs` stands for Right Hand Side and means the right
+///                   side of the `<<` operator.
+/// @return `Unknown gender`, `Female` or `Male`.
+inline std::ostream& operator<<( std::ostream& lhs_stream, const Gender& rhs_Gender ) {
+    switch( rhs_Gender ) {
+        case Gender::UNKNOWN_GENDER:
+            lhs_stream << "Unknown gender";
+            break;
+        case Gender::MALE:
+            lhs_stream << "Male";
+            break;
+        case Gender::FEMALE:
+            lhs_stream << "Female";
+            break;
+        default:
+            /// @throw out_of_range If the enum is not mapped to a string.
+            throw std::out_of_range( PROGRAM_NAME ": Gender not mapped to a string" );
+    }
+
+    return lhs_stream;
+}

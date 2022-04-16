@@ -10,63 +10,69 @@
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include <iostream>
-#include <cstring>
+#include <string>
+
 #include "config.h"
+#include "Mammal.h"
 
 
-#define MAX_CAT_NAME (50)
-enum Gender {UNKNOWN_GENDER, MALE, FEMALE};
-enum Breed {UNKNOWN_BREED, MAINE_COON, MANX, SHORTHAIR, PERSIAN, SPHYNX};
-enum Color {BLACK, WHITE, RED, BLUE, GREEN, PINK};
-const Weight UNKNOWN_WEIGHT = -1;
+/// Felis Catus
+///
+class Cat : public Mammal {
+public:   //////////////////////// Constants ///////////////////////////////////
+    static const std::string      SPECIES_NAME;  ///< The scientific name for this species
+    static const Weight::t_weight MAX_WEIGHT;    ///< The maximum weight for this species
 
-class Cat {
-protected:
-    //protected members
-    char name[MAX_CAT_NAME] ;
-    enum Gender gender ;
-    enum Breed breed ;
-    bool isCatFixed ;
-    Weight weight ;
-public:
-    //getters
-    const char *getName() const;
-    Gender getGender() const;
-    Breed getBreed() const;
-    bool isFixed() const;
-    Weight getWeight() const;
+protected:  ///////////////////////// Member Variables /////////////////////////
+    std::string name ;        ///< The name of the cat
+    bool        isCatFixed ;  ///< `true` if the cat is fixed/neutered
 
-    //setters
-    void setName(const char* newName);
-    void setGender(Gender inputGender);
-    void setBreed(Breed inputBreed);
-    void fixCat();
-    void setWeight(Weight inputWeight);
+public:  //////////////////////////// Constructors /////////////////////////////
+    /// Create a Cat with the minimum fields necessary to have a valid Cat
+    /// @todo Why can't this be defined in the .cpp file??
+    explicit Cat( const std::string& newName ) : Mammal( MAX_WEIGHT, SPECIES_NAME ) {
+        if( !validateName( newName) ) {
+            /// @throws out_of_range If the Cat doesn't have a name
+            throw std::out_of_range( "Cats must have a name" );
+        }
+        name = newName;
+        isCatFixed = false;
 
-    //validations
-    static bool validateName(const char* newName);
-    static bool validateGender(const Gender inputGender);
-    static bool validateBreed(const Breed inputBreed);
-    static bool validateWeight(const Weight inputWeight);
+        Cat::validate();
+    }
 
-    //public member
-    Cat* next ;
+    /// Create a Cat, populating *all* of the member variables
+    Cat( const std::string&     newName
+            ,const Color            newColor
+            ,const bool             newIsFixed
+            ,const Gender           newGender
+            ,const Weight::t_weight newWeight
+    ) : Mammal( newColor, newGender, newWeight, MAX_WEIGHT, SPECIES_NAME ) {
+        if( !validateName( newName) ) {
+            /// @throws out_of_range If the Cat doesn't have a name
+            throw std::out_of_range( "Cats must have a name" );
+        }
+        name = newName;
+        isCatFixed = newIsFixed;
 
-    //constructors
-    Cat();
-    Cat(const char *newName, Gender inputGender, Breed inputBreed, Weight inputWeight);
+        Cat::validate();
+    }
 
-    //destructor
-    virtual ~Cat();
+public:  ////////////////////////// Getters & Setters //////////////////////////
+    std::string getName() const noexcept ;  ///< Get the Cat's name
+    void setName( const std::string& newName );   ///< Set the Cat's name.  The name
+    ///< must not be empty.
 
-    //public methods
-    bool print() const noexcept;
-    bool validate() const noexcept;
+    bool isFixed() const noexcept ;      ///< Return `true` if the cat is fixed/neutered
+    void fixCat() noexcept ;             ///< Spay or neuter the cat
 
-private:
-    //default
-    void zeroOutMemberData();
+public:  /////////////////////////// Public Methods ////////////////////////////
+    std::string speak() const noexcept override;  ///< Say `Meow`.
+    void dump() const noexcept override;          ///< Print the contents of this object (and its parents)
+    bool validate() const noexcept override;      ///< Check to see if the Cat object is valid
 
+public:  /////////////////////// Static Public Methods /////////////////////////
+    // Static methods are `const` by default
+    static bool validateName( const std::string& newName ) ;  ///< Check if `newName` is valid
 };
 
