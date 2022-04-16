@@ -40,3 +40,14 @@ bool List::isSorted() const noexcept {
     }
     return true;
 }
+
+Node *List::get_first() const noexcept {
+    return head;
+}
+
+Node *List::get_next(const Node *currentNode) {
+    if (currentNode->next == nullptr){
+        throw std::invalid_argument("Next Node is empty.");
+    }
+    return currentNode->next;
+}
