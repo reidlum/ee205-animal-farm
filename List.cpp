@@ -9,6 +9,7 @@
 /// @date   15_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 #include "List.h"
+#include <cassert>
 
 bool List::empty() const noexcept {
     return head == nullptr;
@@ -50,4 +51,15 @@ Node *List::get_next(const Node *currentNode) {
         throw std::invalid_argument("Next Node is empty.");
     }
     return currentNode->next;
+}
+
+void List::deleteAllNodes() noexcept {
+    assert( validate() );
+    while( head != nullptr ) {
+        pop_front();
+    }
+#ifdef DEBUG
+        cout << PROGRAM_NAME << ": All Nodes have been deleted" << endl ;
+#endif
+    assert( validate() );
 }
