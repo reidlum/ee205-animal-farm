@@ -9,3 +9,26 @@
 /// @date   15_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 #include "SinglyLinkedList.h"
+#include <iostream>
+
+void SinglyLinkedList::push_front(Node *newNode) {
+    if (newNode == nullptr){
+        throw std::invalid_argument("New node can't be nullptr");
+    }
+
+    //add valid and check if the nodes in the list
+
+    newNode = new Node;
+    newNode->next = head->next;
+    head->next = newNode;
+}
+
+Node *SinglyLinkedList::pop_front() noexcept {
+    if (head == nullptr)
+        return nullptr;
+    // Move the head pointer to the next node
+    Node* temp = head;
+    head = head->next;
+    delete temp;
+    return head;
+}
