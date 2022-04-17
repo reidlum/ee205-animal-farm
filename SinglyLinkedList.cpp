@@ -16,7 +16,7 @@ void SinglyLinkedList::push_front(Node *newNode) {
         throw std::invalid_argument("New node can't be nullptr");
     }
 
-    //add valid and check if the nodes in the list
+    //@todo add valid and check if the nodes in the list
 
     newNode = new Node;
     newNode->next = head->next;
@@ -26,9 +26,24 @@ void SinglyLinkedList::push_front(Node *newNode) {
 Node *SinglyLinkedList::pop_front() noexcept {
     if (head == nullptr)
         return nullptr;
-    // Move the head pointer to the next node
     Node* temp = head;
     head = head->next;
     delete temp;
     return head;
+}
+
+void SinglyLinkedList::insert_after(Node *currentNode, Node *newNode) {
+    //@todo check if list is empty
+    if (currentNode == nullptr){
+        throw std::invalid_argument("Current node can't be nullptr");
+    }
+    //@todo check if current node is in list
+    if (newNode == nullptr){
+        throw std::invalid_argument("New node can't be nullptr");
+    }
+    //@todo check if new node is valid
+    //@todo check if new node is in list
+    newNode = new Node();
+    newNode->next = currentNode->next;
+    currentNode->next = newNode;
 }
