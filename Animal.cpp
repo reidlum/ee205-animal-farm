@@ -14,7 +14,7 @@ const std::string Animal::KINGDOM_NAME = "Animalia";
 
 Animal::Animal(const Weight::t_weight newMaxWeight, const std::string &newClassification,
                const std::string &newSpecies) {
-    setWeight(newMaxWeight);
+    Weight(Weight::UNKNOWN_WEIGHT, newMaxWeight);
     if (validateClassification(newClassification)){
         classification = newClassification;
     }
@@ -25,7 +25,14 @@ Animal::Animal(const Weight::t_weight newMaxWeight, const std::string &newClassi
 
 Animal::Animal(const Gender newGender, const Weight::t_weight newWeight, const Weight::t_weight newMaxWeight,
                const std::string &newClassification, const std::string &newSpecies) {
-
+    setGender(newGender);
+    Weight(newWeight, newMaxWeight);
+    if (validateClassification(newClassification)){
+        classification = newClassification;
+    }
+    if (validateSpecies(newSpecies)){
+        species = newSpecies;
+    }
 }
 
 std::string Animal::getKingdom() const noexcept {
