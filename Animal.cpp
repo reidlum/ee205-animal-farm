@@ -47,14 +47,23 @@ void Animal::setWeight(const Weight::t_weight newWeight) {
 }
 
 bool Animal::validateClassification(const std::string &checkClassification) noexcept {
+    if (checkClassification == "Mammilian"){
+        return true;
+    }
     return false;
 }
 
 bool Animal::validateSpecies(const std::string &checkSpecies) noexcept {
+    if (checkSpecies == "Felis Catus"){
+        return true;
+    }
     return false;
 }
 
 void Animal::setGender(const Gender newGender) {
-
+    if (gender == Gender::UNKNOWN_GENDER) {
+        gender = newGender;
+    } else {
+        throw std::logic_error("No transgender cats");
+    }
 }
-
