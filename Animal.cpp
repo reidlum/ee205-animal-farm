@@ -14,7 +14,13 @@ const std::string Animal::KINGDOM_NAME = "Animalia";
 
 Animal::Animal(const Weight::t_weight newMaxWeight, const std::string &newClassification,
                const std::string &newSpecies) {
-
+    setWeight(newMaxWeight);
+    if (validateClassification(newClassification)){
+        classification = newClassification;
+    }
+    if (validateSpecies(newSpecies)){
+        species = newSpecies;
+    }
 }
 
 Animal::Animal(const Gender newGender, const Weight::t_weight newWeight, const Weight::t_weight newMaxWeight,
