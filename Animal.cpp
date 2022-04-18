@@ -9,3 +9,52 @@
 /// @date   15_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 #include "Animal.h"
+
+const std::string Animal::KINGDOM_NAME = "Animalia";
+
+Animal::Animal(const Weight::t_weight newMaxWeight, const std::string &newClassification,
+               const std::string &newSpecies) {
+
+}
+
+Animal::Animal(const Gender newGender, const Weight::t_weight newWeight, const Weight::t_weight newMaxWeight,
+               const std::string &newClassification, const std::string &newSpecies) {
+
+}
+
+std::string Animal::getKingdom() const noexcept {
+    return "Animalia";
+}
+
+std::string Animal::getClassification() const noexcept {
+    return classification;
+}
+
+std::string Animal::getSpecies() const noexcept {
+    return species;
+}
+
+Gender Animal::getGender() const noexcept {
+    return gender;
+}
+
+Weight::t_weight Animal::getWeight() const noexcept {
+    return weight.getWeight();
+}
+
+void Animal::setWeight(const Weight::t_weight newWeight) {
+    weight.setWeight(newWeight);
+}
+
+bool Animal::validateClassification(const std::string &checkClassification) noexcept {
+    return false;
+}
+
+bool Animal::validateSpecies(const std::string &checkSpecies) noexcept {
+    return false;
+}
+
+void Animal::setGender(const Gender newGender) {
+
+}
+
