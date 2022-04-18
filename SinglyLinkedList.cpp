@@ -11,6 +11,11 @@
 #include "SinglyLinkedList.h"
 #include <iostream>
 
+
+SinglyLinkedList::SinglyLinkedList() {
+    head = nullptr;
+}
+
 void SinglyLinkedList::push_front(Node *newNode) {
     if (newNode == nullptr){
         throw std::invalid_argument("New node can't be nullptr");
@@ -47,3 +52,12 @@ void SinglyLinkedList::insert_after(Node *currentNode, Node *newNode) {
     newNode->next = currentNode->next;
     currentNode->next = newNode;
 }
+
+void SinglyLinkedList::dump() const noexcept {
+
+}
+
+bool SinglyLinkedList::validate() const noexcept {
+    return false;
+}
+
