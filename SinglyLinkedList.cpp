@@ -9,6 +9,7 @@
 /// @date   15_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 #include "SinglyLinkedList.h"
+#include "Node.h"
 #include <iostream>
 
 
@@ -60,6 +61,6 @@ bool SinglyLinkedList::validate() const noexcept {
 }
 
 void SinglyLinkedList::dump() const noexcept {
-    FORMAT_LINE_FOR_DUMP( "Node", "this" ) << this << std::endl ;
+    Node::dump();
 }
 
