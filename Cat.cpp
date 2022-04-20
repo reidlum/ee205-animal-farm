@@ -54,7 +54,11 @@ bool Cat::validateName(const std::string &newName) {
 }
 
 void Cat::dump() const noexcept {
+    Node::dump();
+    Animal::dump();
     Mammal::dump();
+    FORMAT_LINE_FOR_DUMP( "Cat", "name" ) << getName() << std::endl ;
+    FORMAT_LINE_FOR_DUMP( "Cat", "Weight" ) << getWeight() << std::endl ;
 }
 
 bool Cat::validate() const noexcept {
