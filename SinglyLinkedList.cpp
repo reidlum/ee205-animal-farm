@@ -23,9 +23,9 @@ void SinglyLinkedList::push_front(Node *newNode) {
 
     //@todo add valid and check if the nodes in the list
 
-    newNode = new Node;
-    newNode->next = head->next;
-    head->next = newNode;
+    newNode = new Node();
+    newNode->next = head;
+    head = newNode;
 }
 
 Node *SinglyLinkedList::pop_front() noexcept {
@@ -53,11 +53,13 @@ void SinglyLinkedList::insert_after(Node *currentNode, Node *newNode) {
     currentNode->next = newNode;
 }
 
-void SinglyLinkedList::dump() const noexcept {
 
-}
 
 bool SinglyLinkedList::validate() const noexcept {
     return true;
+}
+
+void SinglyLinkedList::dump() const noexcept {
+    FORMAT_LINE_FOR_DUMP( "Node", "this" ) << this << std::endl ;
 }
 

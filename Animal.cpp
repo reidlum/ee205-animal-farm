@@ -86,6 +86,9 @@ Animal::~Animal() {
 
 void Animal::dump() const noexcept {
     Node::dump();
+    FORMAT_LINE_FOR_DUMP( "Animal", "this" ) << this << std::endl ;
+    FORMAT_LINE_FOR_DUMP( "Animal", "Kingdom" ) << getKingdom() << std::endl ;
+
 }
 
 bool Animal::validate() const noexcept {
