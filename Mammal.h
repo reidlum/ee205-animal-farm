@@ -37,6 +37,7 @@ public:   /////////////////////// Constructors ////////////////////////////////
     ) : Animal( newGender, newWeight, newMaxWeight, MAMMAL_NAME, newSpecies ) {
         setColor( newColor );
     };
+    virtual ~Mammal();
 
 public:  ////////////////////////// Getters & Setters //////////////////////////
     Color getColor() const noexcept { return color; }  ///< Get the color

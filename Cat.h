@@ -55,7 +55,7 @@ public:  //////////////////////////// Constructors /////////////////////////////
         name = newName;
         isCatFixed = newIsFixed;
 
-        Cat::validate();
+        //Cat::validate();
     }
 
 public:  ////////////////////////// Getters & Setters //////////////////////////

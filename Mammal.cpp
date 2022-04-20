@@ -10,3 +10,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 #include "Mammal.h"
 const std::string Mammal::MAMMAL_NAME = "Mammilian";
+
+Mammal::~Mammal() {
+}

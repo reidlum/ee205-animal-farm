@@ -80,3 +80,6 @@ void Animal::setGender(const Gender newGender) {
         throw std::logic_error("No transgender cats");
     }
 }
+
+Animal::~Animal() {
+}

@@ -52,7 +52,7 @@ public:   /////////////////////// Constructors ////////////////////////////////
             ,const std::string&     newClassification
             ,const std::string&     newSpecies
     );
-
+    virtual ~Animal();
 public:   ///////////////////// Getters & Setters /////////////////////////////
     std::string getKingdom() const noexcept;         ///< Get the kingdom, which is `Animalia`
     std::string getClassification() const noexcept;  ///< Get the classification

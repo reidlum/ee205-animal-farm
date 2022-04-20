@@ -40,10 +40,10 @@ int main() {
                                                                                      (Animal*)List::get_next( (Node*)pAnimal ) ) {
         cout << pAnimal->speak() << endl;
     }
-    catDB.validate() ;
-    catDB.dump() ;
-    catDB.deleteAllNodes() ;
-    catDB.dump() ;
+    //catDB.validate() ;
+    //catDB.dump() ;
+    //catDB.deleteAllNodes() ;
+    //catDB.dump() ;
     cout << "Done with " << PROGRAM_TITLE ;
     return( EXIT_SUCCESS ) ;
 }
