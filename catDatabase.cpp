@@ -19,6 +19,7 @@
 /*
 struct Cat database[MAX_CATS];
 */
+/*
 NumCats numcats = 0;
 
 
@@ -84,6 +85,6 @@ bool validateDatabase()
     }
     return true;
 }
-
+*/
 
 

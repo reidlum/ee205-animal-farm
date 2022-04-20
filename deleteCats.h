@@ -8,9 +8,5 @@
 /// @author Reid Lum <reidlum@hawaii.edu>
 /// @date   20_Mar_2022
 ///////////////////////////////////////////////////////////////////////////////
-#pragma once
 
-#include "config.h"
 
-extern bool deleteAllCats();
-extern bool deleteCat(Cat* deleteThisCat);
