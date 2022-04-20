@@ -53,6 +53,14 @@ bool Cat::validateName(const std::string &newName) {
     return true;
 }
 
+void Cat::dump() const noexcept {
+    Mammal::dump();
+}
+
+bool Cat::validate() const noexcept {
+    return Animal::validate();
+}
+
 
 
 

@@ -13,3 +13,7 @@ const std::string Mammal::MAMMAL_NAME = "Mammilian";
 
 Mammal::~Mammal() {
 }
+
+void Mammal::dump() const noexcept {
+    Animal::dump();
+}

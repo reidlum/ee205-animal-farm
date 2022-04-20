@@ -83,3 +83,11 @@ void Animal::setGender(const Gender newGender) {
 
 Animal::~Animal() {
 }
+
+void Animal::dump() const noexcept {
+    Node::dump();
+}
+
+bool Animal::validate() const noexcept {
+    return Node::validate();
+}
