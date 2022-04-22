@@ -44,7 +44,7 @@ void Cat::fixCat() noexcept {
 }
 
 std::string Cat::speak() const noexcept{
-    Animal::speak(); std::cout << "Meow";
+    return "Meow";
 }
 
 bool Cat::validateName(const std::string &newName) {
