@@ -67,6 +67,10 @@ void SinglyLinkedList::insert_after(Node *currentNode, Node *newNode) {
         throw std::invalid_argument("New node can't be nullptr");
     }
 
+    if(!newNode->Node::validate()){
+        throw std::domain_error("New node isn't valid");
+    }
+
     newNode = new Node();
     newNode->next = currentNode->next;
     currentNode->next = newNode;
