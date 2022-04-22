@@ -12,7 +12,10 @@
 #include <cassert>
 
 bool List::empty() const noexcept {
-    return head == nullptr;
+    if (head == nullptr){
+        return true;
+    }
+    return false;
 }
 
 unsigned int List::size() const noexcept {

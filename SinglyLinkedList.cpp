@@ -10,6 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 #include "SinglyLinkedList.h"
 #include "Node.h"
+#include "Cat.h"
 #include <iostream>
 
 
@@ -39,16 +40,33 @@ Node *SinglyLinkedList::pop_front() noexcept {
 }
 
 void SinglyLinkedList::insert_after(Node *currentNode, Node *newNode) {
-    //@todo check if list is empty
+    //checks if list is empty
+    if (List::empty()){
+        throw std::logic_error("List is empty");
+    }
+
+    //checks if current node is mullptr
     if (currentNode == nullptr){
         throw std::invalid_argument("Current node can't be nullptr");
     }
-    //@todo check if current node is in list
+
+    //checks if current node or new node is in list
+    for(Node* i = head; i != nullptr ; i = i->next){
+        if (i == currentNode){
+            return;
+        }
+        else if (i->next == nullptr){
+            throw std::logic_error("Current node is not in list");
+        }
+        else if (i == newNode){
+            throw std::logic_error("New node is already in list");
+        }
+    }
+
     if (newNode == nullptr){
         throw std::invalid_argument("New node can't be nullptr");
     }
-    //@todo check if new node is valid
-    //@todo check if new node is in list
+
     newNode = new Node();
     newNode->next = currentNode->next;
     currentNode->next = newNode;
@@ -57,11 +75,15 @@ void SinglyLinkedList::insert_after(Node *currentNode, Node *newNode) {
 
 
 bool SinglyLinkedList::validate() const noexcept {
+    for(Node* i = head; i != nullptr ; i = i->next){
+        i->Node::validate();
+    }
     return true;
 }
 
 void SinglyLinkedList::dump() const noexcept {
     for(Node* i = head; i != nullptr ; i = i->next){
+        PRINT_HEADING_FOR_DUMP;
         i->Node::dump();
     }
 }
