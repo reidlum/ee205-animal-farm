@@ -43,6 +43,7 @@ int main() {
         cout << pAnimal->speak() << endl;
     }
     */
+
     catDB.validate() ;
     catDB.dump() ;
     catDB.deleteAllNodes() ;

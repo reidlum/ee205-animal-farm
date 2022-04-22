@@ -61,6 +61,6 @@ bool SinglyLinkedList::validate() const noexcept {
 }
 
 void SinglyLinkedList::dump() const noexcept {
-    this
+    Node::dump();
 }
 
