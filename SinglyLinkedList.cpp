@@ -61,6 +61,9 @@ bool SinglyLinkedList::validate() const noexcept {
 }
 
 void SinglyLinkedList::dump() const noexcept {
-    Node::dump();
+    for(Node* i = head; i != nullptr ; i = i->next){
+        i->Node::dump();
+        i++;
+    }
 }
 
