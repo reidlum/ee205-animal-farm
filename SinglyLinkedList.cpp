@@ -23,7 +23,15 @@ void SinglyLinkedList::push_front(Node *newNode) {
         throw std::invalid_argument("New node can't be nullptr");
     }
 
-    //@todo add valid and check if the nodes in the list
+    if(!newNode->Node::validate()){
+        throw std::domain_error("New node isn't valid");
+    }
+
+    for(Node* i = head; i != nullptr ; i = i->next){
+        if (i == newNode){
+            throw std::logic_error("New node is already in list");
+        }
+    }
 
     newNode = new Node();
     newNode->next = head;
