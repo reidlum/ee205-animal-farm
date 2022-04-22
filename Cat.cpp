@@ -17,6 +17,7 @@
 #include "catDatabase.h"
 #include "Cat.h"
 #include "config.h"
+#include "Animal.h"
 
 const std::string Cat::SPECIES_NAME = "Felis Catus";
 const Weight::t_weight Cat::MAX_WEIGHT = 40;
@@ -42,8 +43,8 @@ void Cat::fixCat() noexcept {
     Cat::isCatFixed = true;
 }
 
-std::string Cat::speak() const noexcept {
-    return "Meow";
+std::string Cat::speak() const noexcept{
+    Animal::speak(); std::cout << "Meow";
 }
 
 bool Cat::validateName(const std::string &newName) {

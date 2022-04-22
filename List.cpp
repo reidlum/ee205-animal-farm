@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 #include "List.h"
 #include <cassert>
-
+#define DEBUG
 bool List::empty() const noexcept {
     if (head == nullptr){
         return true;
@@ -62,7 +62,7 @@ void List::deleteAllNodes() noexcept {
         pop_front();
     }
 #ifdef DEBUG
-        cout << PROGRAM_NAME << ": All Nodes have been deleted" << endl ;
+        std::cout << PROGRAM_NAME << ": All Nodes have been deleted" << std::endl ;
 #endif
     assert( validate() );
 }
