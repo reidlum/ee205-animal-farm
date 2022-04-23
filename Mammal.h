@@ -44,6 +44,6 @@ public:  ////////////////////////// Getters & Setters //////////////////////////
     void setColor( const Color newColor ) noexcept { color = newColor; }  ///< Set the color
 
 public:  /////////////////////////// Public Methods ////////////////////////////
-    void dump() const noexcept override;  ///< Print the contents of this object (and its parents)
+    virtual void dump() const noexcept override;  ///< Print the contents of this object (and its parents)
 };
 

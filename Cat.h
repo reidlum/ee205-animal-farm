@@ -68,7 +68,7 @@ public:  ////////////////////////// Getters & Setters //////////////////////////
 
 public:  /////////////////////////// Public Methods ////////////////////////////
     std::string speak() const noexcept override;  ///< Say `Meow`.
-    void dump() const noexcept override;          ///< Print the contents of this object (and its parents)
+    virtual void dump() const noexcept override;          ///< Print the contents of this object (and its parents)
     bool validate() const noexcept override;      ///< Check to see if the Cat object is valid
 
 public:  /////////////////////// Static Public Methods /////////////////////////
