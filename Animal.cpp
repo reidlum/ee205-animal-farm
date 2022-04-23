@@ -26,7 +26,7 @@ Animal::Animal(const Weight::t_weight newMaxWeight, const std::string &newClassi
 }
 
 Animal::Animal(const Gender newGender, const Weight::t_weight newWeight, const Weight::t_weight newMaxWeight,
-               const std::string &newClassification, const std::string &newSpecies) : Node(), weight(Weight::POUND, newMaxWeight){
+               const std::string &newClassification, const std::string &newSpecies) : Node(), weight(newWeight, newMaxWeight){
     setGender(newGender);
     //Weight(newWeight, newMaxWeight);
     if (validateClassification(newClassification)){
@@ -35,7 +35,7 @@ Animal::Animal(const Gender newGender, const Weight::t_weight newWeight, const W
     if (validateSpecies(newSpecies)){
         species = newSpecies;
     }
-    setGender(newGender);
+
 }
 
 std::string Animal::getKingdom() const noexcept {
@@ -95,7 +95,7 @@ void Animal::dump() const noexcept {
     FORMAT_LINE_FOR_DUMP( "Animal", "classification" ) << getClassification() << std::endl ;
     FORMAT_LINE_FOR_DUMP( "Animal", "species" ) << getSpecies() << std::endl ;
     FORMAT_LINE_FOR_DUMP( "Animal", "gender" ) << getGender() << std::endl ;
-    FORMAT_LINE_FOR_DUMP( "Animal", "weight" ) << getWeight() << std::endl ;
+    FORMAT_LINE_FOR_DUMP( "Animal", "weight" ) << getWeight() << "out of" << weight.getMaxWeight() << "pounds" << std::endl ;
 }
 
 bool Animal::validate() const noexcept {
