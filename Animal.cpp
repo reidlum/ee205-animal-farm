@@ -9,30 +9,33 @@
 /// @date   15_Apr_2022
 ///////////////////////////////////////////////////////////////////////////////
 #include "Animal.h"
-
+#include <cassert>
 const std::string Animal::KINGDOM_NAME = "Animalia";
 
 Animal::Animal(const Weight::t_weight newMaxWeight, const std::string &newClassification,
                const std::string &newSpecies) : Node(), weight(Weight::POUND, newMaxWeight){
-    Weight(Weight::UNKNOWN_WEIGHT, newMaxWeight);
-    if (validateClassification(newClassification)){
-        classification = newClassification;
+    //Weight(Weight::UNKNOWN_WEIGHT, newMaxWeight);
+    if (!validateClassification(newClassification)){
+        throw std::invalid_argument("Bad classification");
     }
-    if (validateSpecies(newSpecies)){
-        species = newSpecies;
+    classification = newClassification;
+    if (!validateSpecies(newSpecies)){
+        throw std::invalid_argument("bad species");
     }
+    species = newSpecies;
 }
 
 Animal::Animal(const Gender newGender, const Weight::t_weight newWeight, const Weight::t_weight newMaxWeight,
                const std::string &newClassification, const std::string &newSpecies) : Node(), weight(Weight::POUND, newMaxWeight){
     setGender(newGender);
-    Weight(newWeight, newMaxWeight);
+    //Weight(newWeight, newMaxWeight);
     if (validateClassification(newClassification)){
         classification = newClassification;
     }
     if (validateSpecies(newSpecies)){
         species = newSpecies;
     }
+    setGender(newGender);
 }
 
 std::string Animal::getKingdom() const noexcept {
@@ -76,11 +79,10 @@ bool Animal::validateSpecies(const std::string &checkSpecies) noexcept {
 }
 
 void Animal::setGender(const Gender newGender) {
-    if (gender == Gender::UNKNOWN_GENDER) {
-        gender = newGender;
-    } else {
+    if (gender != Gender::UNKNOWN_GENDER) {
         throw std::logic_error("No transgender cats");
     }
+    gender = newGender;
 }
 
 Animal::~Animal() {
@@ -97,5 +99,12 @@ void Animal::dump() const noexcept {
 }
 
 bool Animal::validate() const noexcept {
+    assert( Node::validate() );
+
+    assert( !getKingdom().empty() );
+    assert( validateClassification(getClassification()) );
+    assert( validateSpecies( getSpecies() ));
+    /// Nothing to validate for Gender
+    assert( weight.validate() );
     return Node::validate();
 }

@@ -32,10 +32,14 @@ void SinglyLinkedList::push_front(Node *newNode) {
             throw std::logic_error("New node is already in list");
         }
     }
-
-    newNode = new Node();
-    newNode->next = head;
-    head = newNode;
+    if (head != nullptr){
+        newNode->next = head;
+        head = newNode;
+    } else{
+        newNode->next = nullptr;
+        head = newNode;
+    }
+    count++;
 }
 
 Node *SinglyLinkedList::pop_front() noexcept {
@@ -44,6 +48,7 @@ Node *SinglyLinkedList::pop_front() noexcept {
     Node* temp = head;
     head = head->next;
     delete temp;
+    count--;
     return head;
 }
 
@@ -79,9 +84,9 @@ void SinglyLinkedList::insert_after(Node *currentNode, Node *newNode) {
         throw std::domain_error("New node isn't valid");
     }
 
-    newNode = new Node();
     newNode->next = currentNode->next;
     currentNode->next = newNode;
+    count++;
 }
 
 
