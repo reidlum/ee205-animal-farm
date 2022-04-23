@@ -28,8 +28,9 @@ std::string Cat::getName() const noexcept {
 void Cat::setName(const std::string &newName) {
     if (validateName(newName)){
         Cat::name = newName;
+    } else{
+        throw std::invalid_argument("Cats should have a name");
     }
-    throw std::invalid_argument("Cats should have a name");
 }
 
 bool Cat::isFixed() const noexcept {
