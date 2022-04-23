@@ -16,5 +16,5 @@ Mammal::~Mammal() {
 
 void Mammal::dump() const noexcept {
     Animal::dump();
-    FORMAT_LINE_FOR_DUMP( "Mammal", "color" ) << color << std::endl ;
+    FORMAT_LINE_FOR_DUMP( "Mammal", "color" ) << getColor() << std::endl ;
 }
