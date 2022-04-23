@@ -99,6 +99,7 @@ bool SinglyLinkedList::validate() const noexcept {
 }
 
 void SinglyLinkedList::dump() const noexcept {
+    std::cout << "SinglyLinkedList: head=[" << head << "]" << std::endl;
     for(Node* i = head; i != nullptr ; i = i->next){
         PRINT_HEADING_FOR_DUMP;
         i->dump();
