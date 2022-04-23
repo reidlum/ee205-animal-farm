@@ -75,6 +75,6 @@ public:   ////////////////////// Abstract Methods //////////////////////////////
     virtual std::string speak() const noexcept = 0;  ///< Ask the Animal to say something.  This method is virtual and abstract.
 
 public:   ////////////////////////// Methods //////////////////////////////////
-    virtual void dump() const noexcept override;       ///< Output the contents of this object
+    void dump() const noexcept override;       ///< Output the contents of this object
     bool validate() const noexcept override;   ///< Check to see if the Animal object is valid
 };

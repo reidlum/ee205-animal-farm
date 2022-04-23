@@ -13,7 +13,7 @@
 const std::string Animal::KINGDOM_NAME = "Animalia";
 
 Animal::Animal(const Weight::t_weight newMaxWeight, const std::string &newClassification,
-               const std::string &newSpecies) {
+               const std::string &newSpecies) : Node(), weight(Weight::POUND, newMaxWeight){
     Weight(Weight::UNKNOWN_WEIGHT, newMaxWeight);
     if (validateClassification(newClassification)){
         classification = newClassification;
@@ -24,7 +24,7 @@ Animal::Animal(const Weight::t_weight newMaxWeight, const std::string &newClassi
 }
 
 Animal::Animal(const Gender newGender, const Weight::t_weight newWeight, const Weight::t_weight newMaxWeight,
-               const std::string &newClassification, const std::string &newSpecies) {
+               const std::string &newClassification, const std::string &newSpecies) : Node(), weight(Weight::POUND, newMaxWeight){
     setGender(newGender);
     Weight(newWeight, newMaxWeight);
     if (validateClassification(newClassification)){
@@ -60,6 +60,7 @@ void Animal::setWeight(const Weight::t_weight newWeight) {
 }
 
 bool Animal::validateClassification(const std::string &checkClassification) noexcept {
+    //change when more animals are added
     if (checkClassification == "Mammilian"){
         return true;
     }
@@ -67,6 +68,7 @@ bool Animal::validateClassification(const std::string &checkClassification) noex
 }
 
 bool Animal::validateSpecies(const std::string &checkSpecies) noexcept {
+    //change when more animals are added
     if (checkSpecies == "Felis Catus"){
         return true;
     }
