@@ -14,7 +14,6 @@
 #include <stdexcept>
 
 
-#include "catDatabase.h"
 #include "Cat.h"
 #include "config.h"
 #include "Animal.h"
