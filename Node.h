@@ -59,10 +59,7 @@ public:  /////////////////////////// Public Methods ////////////////////////////
     ///     Node    next                0
     /// @endcode
     ///
-    virtual void dump() const; //{
-    //    FORMAT_LINE_FOR_DUMP( "Node", "this" ) << this << std::endl ;
-    //    FORMAT_LINE_FOR_DUMP( "Node", "next" ) << next << std::endl ;
-    //}
+    virtual void dump() const;
 
 
     /// Check the Node.
