@@ -67,6 +67,26 @@ if (DOXYGEN_FOUND)
 
     message(STATUS "DOXYGEN_OUTPUT_DIRECTORY = [${DOXYGEN_OUTPUT_DIRECTORY}]")
 
+    doxygen_add_docs(doxygen
+            ${CMAKE_SOURCE_DIR}/src
+            ${CMAKE_SOURCE_DIR}/README.md
+            ${CMAKE_SOURCE_DIR}/CONTRIBUTE.md
+            ALL
+            COMMENT "Generating doxygen documentation for ${PROJECT_NAME} to ${DOXYGEN_OUTPUT_DIRECTORY}"
+            )
+
+    add_custom_command(TARGET doxygen
+            PRE_BUILD
+            COMMAND rsync --recursive --mkpath --checksum --delete ${CMAKE_SOURCE_DIR}/images ${DOXYGEN_OUTPUT_DIRECTORY}/html
+            COMMENT "Updating images directory"
+            )
+
+    add_custom_command(TARGET doxygen
+            POST_BUILD
+            COMMAND rsync --recursive --checksum --delete --compress --stats ${DOXYGEN_OUTPUT_DIRECTORY}/html/ reidlum@uhunix.hawaii.edu:~/public_html/ee205/${CMAKE_PROJECT_NAME}
+            COMMENT "Pushing files to UHUnix"
+            )
+
 else (DOXYGEN_FOUND)
     message("Doxygen needs to be installed to generate the doxygen documentation")
 endif (DOXYGEN_FOUND)
