@@ -93,4 +93,6 @@ endif (DOXYGEN_FOUND)
 
 message(STATUS "PROJECT_BINARY_DIR = [${PROJECT_BINARY_DIR}]")
 
-add_executable(ee205_lab_08d_animal_farm_1_to_clion src/main.cpp src/config.h src/Cat.cpp src/Cat.h src/Animal.cpp src/Animal.h src/Mammal.cpp src/Mammal.h src/Node.h src/SinglyLinkedList.cpp src/SinglyLinkedList.h src/Weight.cpp src/Weight.h src/Color.h src/Gender.h src/List.cpp src/List.h src/Node.cpp)
+add_executable(main_good src/main.cpp src/config.h src/Cat.cpp src/Cat.h src/Animal.cpp src/Animal.h src/Mammal.cpp src/Mammal.h src/Node.h src/SinglyLinkedList.cpp src/SinglyLinkedList.h src/Weight.cpp src/Weight.h src/Color.h src/Gender.h src/List.cpp src/List.h src/Node.cpp)
+add_executable(main_good2 src/main.cpp src/config.h src/Cat.cpp src/Cat.h src/Animal.cpp src/Animal.h src/Mammal.cpp src/Mammal.h src/Node.h src/SinglyLinkedList.cpp src/SinglyLinkedList.h src/Weight.cpp src/Weight.h src/Color.h src/Gender.h src/List.cpp src/List.h src/Node.cpp)
+add_executable(main_good3 src/main.cpp src/config.h src/Cat.cpp src/Cat.h src/Animal.cpp src/Animal.h src/Mammal.cpp src/Mammal.h src/Node.h src/SinglyLinkedList.cpp src/SinglyLinkedList.h src/Weight.cpp src/Weight.h src/Color.h src/Gender.h src/List.cpp src/List.h src/Node.cpp)
